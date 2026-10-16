@@ -1,9 +1,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Книги Кармен Мола</title>
 
 <style>
+/* ===== ОСНОВНЫЕ СТИЛИ: селектор по типу ===== */
 body {
     margin: 0;
     padding: 0;
@@ -16,13 +18,6 @@ body {
     font-size: 16px;
     line-height: 1.5;
     font-family: Georgia, "Times New Roman", serif;
-    height: 100%;
-    overflow: hidden;
-}
-
-html {
-    height: 100%;
-    overflow: hidden;
 }
 
 table {
@@ -64,6 +59,7 @@ a {
     font-weight: bold;
 }
 
+/* ===== КЛАССЫ ===== */
 .nav-table {
     width: 90%;
     padding: 5px;
@@ -150,15 +146,6 @@ a {
     border: 2px solid #9E4A4A;
 }
 
-.book-table th {
-    background-color: #9E4A4A;
-    color: #FFFFFF;
-}
-
-.book-table td {
-    border: 1px solid #5A2F2F;
-}
-
 .form-table {
     width: 70%;
     padding: 15px;
@@ -168,12 +155,6 @@ a {
 
 .form-table td {
     padding: 10px;
-    color: #FFFFFF;
-    background-color: #171717;
-}
-
-.form-table td.form-title {
-    background-color: #9E4A4A;
     color: #FFFFFF;
 }
 
@@ -202,14 +183,13 @@ a {
     border: 1px solid #5A2F2F;
 }
 
+/* ===== ИДЕНТИФИКАТОРЫ ===== */
 #page {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     background-color: transparent;
-    table-layout: fixed;
-    border-spacing: 0;
 }
 
 #mainContent {
@@ -218,7 +198,6 @@ a {
 }
 
 #navigation {
-    width: 230px;
     color: #FFFFFF;
     background-color: #171717;
     padding: 10px;
@@ -226,7 +205,6 @@ a {
 }
 
 #characters {
-    width: 250px;
     color: #FFFFFF;
     background-color: #171717;
     padding: 10px;
@@ -239,6 +217,7 @@ a {
     color: #FFFFFF;
 }
 
+/* ===== ПСЕВДОКЛАССЫ ===== */
 a:link {
     color: #E5A0A0;
     text-decoration: none;
@@ -267,6 +246,7 @@ textarea:focus {
     border: 2px solid #E5A0A0;
 }
 
+/* ===== ПСЕВДОЭЛЕМЕНТЫ ===== */
 .book-text:first-letter {
     font-size: 28px;
     font-weight: bold;
@@ -282,6 +262,7 @@ textarea:focus {
     font-weight: bold;
 }
 
+/* ===== СЕЛЕКТОРЫ АТРИБУТОВ ===== */
 input[type="text"],
 input[type="password"] {
     width: 260px;
@@ -321,6 +302,7 @@ img[alt] {
     background-color: #171717;
 }
 
+/* ===== СЕЛЕКТОРЫ ПОТОМКОВ ===== */
 #navigation a {
     font-size: 17px;
     line-height: 1.4;
@@ -336,6 +318,7 @@ img[alt] {
     font-family: Georgia, "Times New Roman", serif;
 }
 
+/* ===== СЕЛЕКТОРЫ ПРЯМЫХ ПОТОМКОВ ===== */
 #mainContent > table {
     margin-left: auto;
     margin-right: auto;
@@ -351,6 +334,17 @@ img[alt] {
 
 .review-table > tbody > tr > td {
     border: 1px solid #6E3A3A;
+}
+
+/* ===== ДОПОЛНИТЕЛЬНОЕ ОФОРМЛЕНИЕ ===== */
+.book-table th,
+.form-table td.form-title {
+    background-color: #9E4A4A;
+    color: #FFFFFF;
+}
+
+.book-table td {
+    border: 1px solid #5A2F2F;
 }
 
 textarea {
@@ -378,12 +372,34 @@ select {
     color: #FFFFFF;
 }
 
+
+/* ===== НЕЗАВИСИМАЯ ПРОКРУТКА ТРЁХ КОЛОНОК ===== */
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#page {
+    width: 100%;
+    height: 100vh;
+    table-layout: fixed;
+    border-spacing: 0;
+}
+
 #page > tbody > tr > td {
     height: 100vh;
     padding: 0;
     vertical-align: top;
     overflow: hidden;
 }
+
+#navigation { width: 230px; }
+#characters { width: 250px; }
 
 .scroll-column,
 .scroll-main {
@@ -395,30 +411,20 @@ select {
     box-sizing: border-box;
 }
 
-.scroll-column {
-    padding: 10px;
-}
-
-.scroll-main {
-    padding: 0 8px 20px;
-}
+.scroll-column { padding: 10px; }
+.scroll-main { padding: 0 8px 20px; }
 
 .scroll-column::-webkit-scrollbar,
-.scroll-main::-webkit-scrollbar {
-    width: 9px;
-}
-
+.scroll-main::-webkit-scrollbar { width: 9px; }
 .scroll-column::-webkit-scrollbar-track,
-.scroll-main::-webkit-scrollbar-track {
-    background: #171717;
-}
-
+.scroll-main::-webkit-scrollbar-track { background: #171717; }
 .scroll-column::-webkit-scrollbar-thumb,
 .scroll-main::-webkit-scrollbar-thumb {
     background-color: #9E4A4A;
     border: 2px solid #171717;
 }
 
+/* ===== МУХИ: фон прозрачный, размеры и повороты разные ===== */
 .fly-link {
     display: inline-block;
     text-decoration: none;
@@ -441,83 +447,259 @@ select {
     transition: transform 0.2s ease;
 }
 
-.fly-top {
-    width: 76px;
-    margin: 0 14px 0 8px;
-    vertical-align: middle;
-    transform: rotate(-8deg);
+.fly-top { width: 76px; margin: 0 14px 0 8px; vertical-align: middle; transform: rotate(-8deg); }
+.fly-top:hover { transform: rotate(-8deg) scale(1.12); }
+.fly-1 { width: 58px; margin: 5px 15px; transform: rotate(17deg); }
+.fly-1:hover { transform: rotate(17deg) scale(1.12); }
+.fly-2 { width: 62px; margin: 5px 8px 5px 15px; transform: rotate(-21deg); }
+.fly-2:hover { transform: rotate(-21deg) scale(1.12); }
+.fly-3 { width: 54px; margin: 8px 18px; transform: rotate(29deg); }
+.fly-3:hover { transform: rotate(29deg) scale(1.12); }
+.fly-4 { width: 64px; margin: 5px 10px; transform: rotate(-13deg); }
+.fly-4:hover { transform: rotate(-13deg) scale(1.12); }
+.fly-5 { width: 56px; margin: 10px 20px 5px 8px; transform: rotate(24deg); }
+.fly-5:hover { transform: rotate(24deg) scale(1.12); }
+.fly-6 { width: 60px; margin: 5px 12px; transform: rotate(-30deg); }
+.fly-6:hover { transform: rotate(-30deg) scale(1.12); }
+
+.main-title { display: inline-block; vertical-align: middle; }
+
+
+
+* {
+    box-sizing: border-box;
 }
 
-.fly-top:hover {
-    transform: rotate(-8deg) scale(1.12);
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.fly-1 {
-    width: 58px;
-    margin: 5px 15px;
-    transform: rotate(17deg);
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
 }
 
-.fly-1:hover {
-    transform: rotate(17deg) scale(1.12);
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    box-sizing: border-box;
 }
 
-.fly-2 {
-    width: 62px;
-    margin: 5px 8px 5px 15px;
-    transform: rotate(-21deg);
+.book-table,
+.review-table,
+.form-table,
+.content-table,
+.characters-table,
+.nav-table {
+    max-width: 100%;
 }
 
-.fly-2:hover {
-    transform: rotate(-21deg) scale(1.12);
+.book-cover {
+    max-width: 100%;
+    height: auto;
 }
 
-.fly-3 {
-    width: 54px;
-    margin: 8px 18px;
-    transform: rotate(29deg);
+@media screen and (max-width: 801px) {
+    html,
+    body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #page {
+        display: block;
+        width: 100%;
+        height: auto;
+        table-layout: auto;
+        border-spacing: 0;
+    }
+
+    #page > tbody,
+    #page > tbody > tr {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #page > tbody > tr > td,
+    #navigation,
+    #mainContent,
+    #characters {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
+        min-width: 0;
+        padding: 10px;
+        overflow: visible;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid #9E4A4A;
+    }
+
+    .scroll-column,
+    .scroll-main {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        padding: 8px;
+    }
+
+    /* На узком экране основная информация идет первой */
+    #mainContent {
+        order: 1;
+    }
+
+    #navigation {
+        order: 2;
+    }
+
+    #characters {
+        order: 3;
+    }
+
+    #page > tbody > tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    table {
+        max-width: 100%;
+    }
+
+    .book-table,
+    .review-table,
+    .form-table,
+    .content-table,
+    .characters-table,
+    .nav-table {
+        width: 100% !important;
+        table-layout: fixed;
+    }
+
+    td,
+    th {
+        overflow-wrap: anywhere;
+        word-break: normal;
+        padding: 7px;
+    }
+
+    .book-cover {
+        width: 100%;
+        max-width: 350px;
+        margin: 5px auto;
+    }
+
+    .book-title,
+    h1 {
+        font-size: clamp(24px, 7vw, 36px);
+        overflow-wrap: anywhere;
+    }
+
+    .book-text {
+        font-size: 18px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .form-table td {
+        width: auto;
+    }
+
+    .form-table input[type="submit"],
+    .form-table input[type="reset"] {
+        margin: 4px;
+        white-space: normal;
+    }
 }
 
-.fly-3:hover {
-    transform: rotate(29deg) scale(1.12);
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Старые теги <font size="..."> задавали размер независимо от body,
+       поэтому на телефоне явно уменьшаем их текст в основном блоке. */
+    #mainContent font[size="3"] {
+        font-size: 14px !important;
+    }
+
+    #mainContent font[size="4"] {
+        font-size: 16px !important;
+    }
+
+    #mainContent font[size="5"] {
+        font-size: 20px !important;
+    }
+
+    #mainContent font[size="6"] {
+        font-size: 25px !important;
+    }
+
+    #navigation,
+    #mainContent,
+    #characters {
+        padding: 6px;
+    }
+
+    .scroll-column,
+    .scroll-main {
+        padding: 5px;
+    }
+
+    .book-text {
+        font-size: 16px;
+    }
+
+    .book-title,
+    h1 {
+        font-size: 25px;
+        margin: 8px 0;
+        padding: 5px;
+    }
+
+    .book-table,
+    .review-table,
+    .form-table {
+        border-spacing: 1px;
+        padding: 3px;
+    }
+
+    td,
+    th {
+        padding: 5px;
+        font-size: 13px;
+    }
+
+    .fly-top {
+        width: 48px;
+        margin: 0 5px 0 0;
+    }
+
+    .fly-1,
+    .fly-2,
+    .fly-3,
+    .fly-4,
+    .fly-5,
+    .fly-6 {
+        max-width: 48px;
+    }
 }
 
-.fly-4 {
-    width: 64px;
-    margin: 5px 10px;
-    transform: rotate(-13deg);
-}
-
-.fly-4:hover {
-    transform: rotate(-13deg) scale(1.12);
-}
-
-.fly-5 {
-    width: 56px;
-    margin: 10px 20px 5px 8px;
-    transform: rotate(24deg);
-}
-
-.fly-5:hover {
-    transform: rotate(24deg) scale(1.12);
-}
-
-.fly-6 {
-    width: 60px;
-    margin: 5px 12px;
-    transform: rotate(-30deg);
-}
-
-.fly-6:hover {
-    transform: rotate(-30deg) scale(1.12);
-}
-
-.main-title {
-    display: inline-block;
-    vertical-align: middle;
-}
 </style>
-
 
 </head>
 
@@ -1433,199 +1615,132 @@ select {
 
     <br><br><br><br>
 
+    <a name="authorization"></a>
 
-<a name="authorization"></a>
-
-<font color="white" size="6">
-    <b>АВТОРИЗАЦИЯ</b>
-</font>
-
-<br><br>
-
-<form action="#" method="post" enctype="multipart/form-data">
-
-    <font color="#D8D8D8" size="4">
-        <b>Выберите действие:</b>
+    <font color="white" size="6">
+        <b>АВТОРИЗАЦИЯ</b>
     </font>
 
     <br><br>
 
-    <input type="radio" name="action" value="login" checked>
-    <font color="white" size="4">Вход</font>
+    <form action="#" method="post" enctype="multipart/form-data">
 
-    <input type="radio" name="action" value="registration">
-    <font color="white" size="4">Регистрация</font>
+        <font color="#D8D8D8" size="4">
+            <b>Выберите действие:</b>
+        </font>
 
-    <br><br><br>
+        <br><br>
 
+        <input type="radio" name="action" value="login" checked>
+        <font color="white" size="4">Вход</font>
 
-    <table class="form-table" width="70%" cellpadding="15" cellspacing="5"
-           bgcolor="#171717" border="2">
-        <tr>
-            <td colspan="2" bgcolor="#9E4A4A" align="center">
-                <font color="white" size="5"><b>Вход на сайт</b></font>
-            </td>
-        </tr>
+        <input type="radio" name="action" value="registration">
+        <font color="white" size="4">Регистрация</font>
 
-        <tr>
-            <td width="35%">
-                <font color="white" size="4">Логин:</font>
-            </td>
-            <td>
-                <input type="text" name="login" size="40">
-            </td>
-        </tr>
+        <br><br><br>
 
-        <tr>
-            <td>
-                <font color="white" size="4">Пароль:</font>
-            </td>
-            <td>
-                <input type="password" name="password" size="40">
-            </td>
-        </tr>
+        <table class="form-table" width="70%" cellpadding="15" cellspacing="5" bgcolor="#171717" border="2">
+            <tr>
+                <td colspan="2" class="form-title" bgcolor="#9E4A4A" align="center">
+                    <font color="white" size="5"><b>Вход на сайт</b></font>
+                </td>
+            </tr>
+            <tr>
+                <td width="35%"><font color="white" size="4">Логин:</font></td>
+                <td><input type="text" name="login" size="40"></td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Пароль:</font></td>
+                <td><input type="password" name="password" size="40"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="ВОЙТИ">
+                </td>
+            </tr>
+        </table>
 
-        <tr>
-            <td colspan="2" align="center">
-                <input type="submit" value="ВОЙТИ">
-            </td>
-        </tr>
-    </table>
+        <br><br>
 
-    <br><br>
+        <table class="form-table" width="70%" cellpadding="15" cellspacing="5" bgcolor="#171717" border="2">
+            <tr>
+                <td colspan="2" class="form-title" bgcolor="#9E4A4A" align="center">
+                    <font color="white" size="5"><b>Регистрация</b></font>
+                </td>
+            </tr>
+            <tr>
+                <td width="35%"><font color="white" size="4">Логин:</font></td>
+                <td><input type="text" name="registration_login" size="40"></td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Имя пользователя:</font></td>
+                <td><input type="text" name="username" size="40"></td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Любимая книга:</font></td>
+                <td>
+                    <select name="favorite_book">
+                        <option value="gypsy_bride">Цыганская невеста</option>
+                        <option value="purple_net">Пурпурная сеть</option>
+                        <option value="malutka">Малютка</option>
+                        <option value="mothers_silence">Молчание матерей</option>
+                        <option value="klan">Клан</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Прочитанные книги:</font></td>
+                <td>
+                    <select name="read_books" size="5" multiple>
+                        <option value="gypsy_bride">Цыганская невеста</option>
+                        <option value="purple_net">Пурпурная сеть</option>
+                        <option value="malutka">Малютка</option>
+                        <option value="mothers_silence">Молчание матерей</option>
+                        <option value="klan">Клан</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Пол:</font></td>
+                <td>
+                    <input type="radio" name="gender" value="male" checked>
+                    <font color="white" size="4">Мужской</font>
+                    <br>
+                    <input type="radio" name="gender" value="female">
+                    <font color="white" size="4">Женский</font>
+                </td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Пароль:</font></td>
+                <td><input type="password" name="registration_password" size="40"></td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Подтвердите пароль:</font></td>
+                <td><input type="password" name="password_confirm" size="40"></td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">О себе:</font></td>
+                <td><textarea name="about" rows="6" cols="45"></textarea></td>
+            </tr>
+            <tr>
+                <td><font color="white" size="4">Фото профиля:</font></td>
+                <td><input type="file" name="profile_photo"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="agreement" value="yes">
+                    <font color="white" size="4">Согласен с правилами сайта</font>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
+                    <input type="reset" value="ОЧИСТИТЬ">
+                </td>
+            </tr>
+        </table>
 
-    <!-- РЕГИСТРАЦИЯ -->
-    <table class="form-table" width="70%" cellpadding="15" cellspacing="5"
-           bgcolor="#171717" border="2">
-        <tr>
-            <td colspan="2" bgcolor="#9E4A4A" align="center">
-                <font color="white" size="5"><b>Регистрация</b></font>
-            </td>
-        </tr>
-
-        <tr>
-            <td width="35%">
-                <font color="white" size="4">Логин:</font>
-            </td>
-            <td>
-                <input type="text" name="registration_login" size="40">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">Имя пользователя:</font>
-            </td>
-            <td>
-                <input type="text" name="username" size="40">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">Любимая книга:</font>
-            </td>
-            <td>
-                <select name="favorite_book">
-                    <option value="gypsy_bride">Цыганская невеста</option>
-                    <option value="purple_net">Пурпурная сеть</option>
-                    <option value="malutka">Малютка</option>
-                    <option value="mothers_silence">Молчание матерей</option>
-                    <option value="klan">Клан</option>
-                </select>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">Прочитанные книги:</font>
-            </td>
-            <td>
-                <select name="read_books" size="5" multiple>
-                    <option value="gypsy_bride">Цыганская невеста</option>
-                    <option value="purple_net">Пурпурная сеть</option>
-                    <option value="malutka">Малютка</option>
-                    <option value="mothers_silence">Молчание матерей</option>
-                    <option value="klan">Клан</option>
-                </select>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">Пол:</font>
-            </td>
-            <td>
-                <input type="radio" name="gender" value="male" checked>
-                <font color="white" size="4">Мужской</font>
-                <br>
-                <input type="radio" name="gender" value="female">
-                <font color="white" size="4">Женский</font>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">Пароль:</font>
-            </td>
-            <td>
-                <input type="password" name="registration_password" size="40">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">Подтвердите пароль:</font>
-            </td>
-            <td>
-                <input type="password" name="password_confirm" size="40">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">О себе:</font>
-            </td>
-            <td>
-                <textarea name="about" rows="6" cols="45"></textarea>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <font color="white" size="4">Фото профиля:</font>
-            </td>
-            <td>
-                <input type="file" name="profile_photo">
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="2">
-                <input type="checkbox" name="agreement" value="yes">
-                <font color="white" size="4">Согласен с правилами сайта</font>
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="2" align="center">
-                <input type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
-                <input type="reset" value="ОЧИСТИТЬ">
-            </td>
-        </tr>
-    </table>
-
-</form>
-
-	
-	
-	
-	
-	
-	
-	
-	
-
+    </form>
 
     <br><br>
 <br><br>
