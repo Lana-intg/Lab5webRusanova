@@ -5,7 +5,7 @@
     <title>Книги Кармен Мола</title>
 
 <style>
-/* ===== ОСНОВНЫЕ СТИЛИ: селектор по типу ===== */
+
 body {
     margin: 0;
     padding: 0;
@@ -59,7 +59,7 @@ a {
     font-weight: bold;
 }
 
-/* ===== КЛАССЫ ===== */
+
 .nav-table {
     width: 90%;
     padding: 5px;
@@ -183,7 +183,7 @@ a {
     border: 1px solid #5A2F2F;
 }
 
-/* ===== ИДЕНТИФИКАТОРЫ ===== */
+
 #page {
     width: 100%;
     height: 100%;
@@ -217,7 +217,7 @@ a {
     color: #FFFFFF;
 }
 
-/* ===== ПСЕВДОКЛАССЫ ===== */
+
 a:link {
     color: #E5A0A0;
     text-decoration: none;
@@ -246,7 +246,7 @@ textarea:focus {
     border: 2px solid #E5A0A0;
 }
 
-/* ===== ПСЕВДОЭЛЕМЕНТЫ ===== */
+
 .book-text:first-letter {
     font-size: 28px;
     font-weight: bold;
@@ -272,7 +272,7 @@ th,
     font-weight: bold;
 }
 
-/* ===== СЕЛЕКТОРЫ АТРИБУТОВ ===== */
+
 input[type="text"],
 input[type="password"] {
     width: 260px;
@@ -312,7 +312,7 @@ img[alt] {
     background-color: #171717;
 }
 
-/* ===== СЕЛЕКТОРЫ ПОТОМКОВ ===== */
+
 #navigation a {
     font-size: 17px;
     line-height: 1.4;
@@ -328,7 +328,7 @@ img[alt] {
     font-family: Georgia, "Times New Roman", serif;
 }
 
-/* ===== СЕЛЕКТОРЫ ПРЯМЫХ ПОТОМКОВ ===== */
+
 #mainContent > table {
     margin-left: auto;
     margin-right: auto;
@@ -346,7 +346,7 @@ img[alt] {
     border: 1px solid #6E3A3A;
 }
 
-/* ===== ДОПОЛНИТЕЛЬНОЕ ОФОРМЛЕНИЕ ===== */
+
 .book-table th,
 .form-table td.form-title {
     background-color: #9E4A4A;
@@ -383,7 +383,7 @@ select {
 }
 
 
-/* ===== НЕЗАВИСИМАЯ ПРОКРУТКА ТРЁХ КОЛОНОК ===== */
+
 html {
     height: 100%;
     overflow: hidden;
@@ -434,7 +434,7 @@ body {
     border: 2px solid #171717;
 }
 
-/* ===== МУХИ: фон прозрачный, размеры и повороты разные ===== */
+
 .fly-link {
     display: inline-block;
     text-decoration: none;
@@ -562,24 +562,6 @@ select {
         padding: 8px;
     }
 
-    /* На узком экране основная информация идет первой */
-    #mainContent {
-        order: 1;
-    }
-
-    #navigation {
-        order: 2;
-    }
-
-    #characters {
-        order: 3;
-    }
-
-    #page > tbody > tr {
-        display: flex;
-        flex-direction: column;
-    }
-
     table {
         max-width: 100%;
     }
@@ -641,8 +623,7 @@ select {
         font-size: 14px;
     }
 
-    /* Старые теги <font size="..."> задавали размер независимо от body,
-       поэтому на телефоне явно уменьшаем их текст в основном блоке. */
+
     #mainContent font[size="3"] {
         font-size: 14px !important;
     }
@@ -830,7 +811,7 @@ select {
     <tr>
         <td colspan="2" bgcolor="#171717" align="center" valign="middle" height="90">
 <a name="top"></a>
-            <a href="#top" class="fly-link" title="В начало страницы"><img src="Муха.png" alt="Вернуться в начало" class="fly fly-top"></a>
+            <a href="#navigation" class="fly-link" title="Перейти к навигации"><img src="Муха.png" alt="Вернуться в начало" class="fly fly-top"></a>
             <h1 class="main-title">
         <font color="white" size="6">
             КАРМЕН МОЛА
@@ -851,7 +832,7 @@ select {
     <font color="white" size="6">
         <b>ОБ АВТОРАХ</b>
     </font>
-    <a href="#top" class="fly-link" title="В начало страницы"><img src="Муха.png" alt="Муха" class="fly fly-1"></a>
+    <a href="#navigation" class="fly-link" title="Перейти к навигации"><img src="Муха.png" alt="Муха" class="fly fly-1"></a>
 
     <br><br>
 
@@ -1004,7 +985,7 @@ select {
             <td align="left" valign="top">
                 <img class="book-cover" src="цыганская невеста.jpg" width="350" align="left" hspace="20" vspace="5" alt="Цыганская невеста">
 
-                <a href="#top" class="fly-link" title="В начало страницы"><img src="Муха.png" alt="Муха" class="fly fly-2"></a>
+                <a href="#navigation" class="fly-link" title="Перейти к навигации"><img src="Муха.png" alt="Муха" class="fly fly-2"></a>
                 <font color="white" size="7">
                     <b>Цыганская невеста</b>
                 </font>
@@ -1045,7 +1026,7 @@ select {
     <font color="white" size="5">
         <b>ОТЗЫВЫ</b>
     </font>
-    <a href="#top" class="fly-link" title="В начало страницы"><img src="Муха.png" alt="Муха" class="fly fly-3"></a>
+    <a href="#navigation" class="fly-link" title="Перейти к навигации"><img src="Муха.png" alt="Муха" class="fly fly-3"></a>
 
     <br><br>
 
@@ -1105,7 +1086,7 @@ select {
             <td align="left" valign="top">
                 <img class="book-cover" src="пурпурная сеть.jpg" width="350" align="left" hspace="20" vspace="5" alt="Пурпурная сеть">
 
-                <a href="#top" class="fly-link" title="В начало страницы"><img src="Муха.png" alt="Муха" class="fly fly-4"></a>
+                <a href="#navigation" class="fly-link" title="Перейти к навигации"><img src="Муха.png" alt="Муха" class="fly fly-4"></a>
                 <font color="white" size="7">
                     <b>Пурпурная сеть</b>
                 </font>
@@ -1197,7 +1178,7 @@ select {
             <td align="left" valign="top">
                 <img class="book-cover" src="малютка.jpg" width="350" align="left" hspace="20" vspace="5" alt="Малютка">
 
-                <a href="#top" class="fly-link" title="В начало страницы"><img src="Муха.png" alt="Муха" class="fly fly-5"></a>
+                <a href="#navigation" class="fly-link" title="Перейти к навигации"><img src="Муха.png" alt="Муха" class="fly fly-5"></a>
                 <font color="white" size="7">
                     <b>Малютка</b>
                 </font>
@@ -1463,7 +1444,7 @@ select {
 
     <font color="white" size="6">
         <b>КНИГИ ЦИКЛА «ИНСПЕКТОР ЕЛЕНА БЛАНКО»</b>
-        <a href="#top" class="fly-link" title="В начало страницы"><img src="Муха.png" alt="Муха" class="fly fly-6"></a>
+        <a href="#navigation" class="fly-link" title="Перейти к навигации"><img src="Муха.png" alt="Муха" class="fly fly-6"></a>
     </font>
 
     <br><br>
